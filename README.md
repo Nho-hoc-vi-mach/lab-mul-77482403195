@@ -1,6 +1,6 @@
-# Bộ nhân mul16 – <Họ tên>, <MSSV>
+# Bộ nhân mul16 - Trần Minh Nhớ  -  77482403195
 
-Repo cá nhân dùng cho Lab 2 đến Lab 8. Đặc tả: `doc/dac-ta.md`.
+
 
 | Thư mục | Nội dung |
 |---|---|
