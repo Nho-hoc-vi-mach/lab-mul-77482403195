@@ -124,3 +124,65 @@ git commit -m "Bo theo doi thu muc sim"
 Lenh --cached chi bo theo doi trong Git, van giu file tren o dia.
 
 Them sim/ vao .gitignore de tranh commit lai.
+## PHAN 4 - MAKEFILE
+
+### Q13. Vi sao make sim-icarus khong bien dich lai?
+
+Lenh:
+make sim-icarus
+make sim-icarus
+touch rtl/mul16.sv
+make sim-icarus
+
+Ket qua:
+- Lan 1: bien dich bang iverilog va chay vvp.
+- Lan 2: chi chay vvp, khong bien dich lai.
+- Sau touch: bien dich lai va chay vvp.
+
+Giai thich:
+Make so sanh thoi gian cap nhat cua file dich
+.vvp voi cac file nguon RTL va testbench.
+
+Neu file nguon moi hon file dich, Make se
+bien dich lai.
+
+Target sim cua Verilator duoc khai bao .PHONY
+nen moi lan goi deu chay lenh verilator.
+
+### Q14. Tac dung cua .PHONY
+
+Lenh:
+touch clean
+make clean
+rm clean
+
+Ket qua:
+rm -rf sim/
+
+Neu thieu .PHONY va co file ten clean,
+Make co the coi target clean da cap nhat
+va khong chay lenh don dep.
+
+.PHONY giup target clean luon duoc thuc hien
+khi goi make clean.
+
+### Q15. Ghi de bien trong Makefile
+
+Lenh:
+make trace A=200 B=7 W=8
+
+Ket qua:
+W=8, a=200, b=7
+p = 1400 (0x0578) -> DUNG
+
+Lenh tren ghi de ba bien A, B va W.
+
+Gia tri mac dinh:
+A = 13
+B = 11
+W = 4
+
+Toan tu ?= chi gan gia tri khi bien chua
+duoc dinh nghia, cho phep nguoi dung thay
+doi tham so tu dong lenh ma khong can
+chinh sua Makefile.
