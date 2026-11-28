@@ -186,3 +186,58 @@ Toan tu ?= chi gan gia tri khi bien chua
 duoc dinh nghia, cho phep nguoi dung thay
 doi tham so tu dong lenh ma khong can
 chinh sua Makefile.
+## PHAN 5 - TCL SCRIPT
+
+### Q16. Su khac nhau giua dau ngoac kep va ngoac nhon
+
+Vi du:
+set w 16
+puts "W = $w"
+puts {W = $w}
+
+Ket qua:
+W = 16
+W = $w
+
+Dau ngoac kep cho phep thay the gia tri bien.
+Dau ngoac nhon giu nguyen noi dung ben trong.
+
+Dieu kien cua if va bieu thuc cua expr nen
+dat trong ngoac nhon de tranh thay the som
+va giup Tcl danh gia bieu thuc dung luc.
+
+### Q17. Tinh ty le phep nhan sai
+
+Cong thuc:
+Ty le = So phep sai * 100.0 / 206
+
+Code:
+set ty_le [format "%.1f%%" [expr {$sai * 100.0 / 206}]]
+
+Lenh kiem tra:
+make logs
+
+Ket qua:
+File         Commit    Ket qua  Sai    Ty le
+run_01.log   a1f3c09   TREO     -      -
+run_02.log   5be2d14   FAIL     103    50.0%
+run_03.log   5be2d14   FAIL     88     42.7%
+run_04.log   c7e90aa   PASS     0      0.0%
+run_05.log   c7e90aa   PASS     0      0.0%
+
+Tong so phep nhan sai: 191
+
+Lan mo phong bi treo khong co ket qua
+hop le nen khong tinh ty le.
+
+### Q18. Vi sao nen su dung Tcl?
+
+Tcl co the goi truc tiep cac lenh cua Yosys,
+OpenSTA va OpenROAD.
+
+Tcl ho tro bien, vong lap, dieu kien,
+ham va xu ly file.
+
+Su dung Tcl giup tu dong hoa qua trinh
+tong hop RTL, phan tich timing va thiet ke
+vat ly ma khong can go tung lenh thu cong.
