@@ -69,6 +69,54 @@ Ket qua: 40 dong.
 Nhan xet:
 > ghi de noi dung cu.
 >> ghi noi them vao cuoi file.
+## PHAN 2 - VI/VIM VA SYSTEMVERILOG
+
+### Q6. Sau loi khai bao cong da sua
+
+1. Dong 13-23: doi wire va reg thanh logic.
+2. Dong 14: doi reset thanh rst.
+3. Dong 18: doi [W:0] thanh [W-1:0].
+4. Dong 19: them dau phay sau cong b.
+5. Dong 23 va 33: doi prod thanh p.
+6. Dong 23: doi [W-1:0] thanh [2*W-1:0].
+
+Lenh kiem tra:
+verilator --lint-only -Wall -Wno-fatal --top-module mul16 rtl/mul16.sv
+
+Ket qua:
+Khong co loi cu phap.
+Co 6 canh bao UNUSEDSIGNAL do chua viet FSM
+va datapath.
+
+### Q7. Vi sao dung \<prod\> thay vi prod?
+
+Lenh:
+:%s/\<prod\>/p/g
+
+Ky hieu \< va \> gioi han tu can tim.
+Chi thay the dung ten prod.
+
+Neu dung :%s/prod/p/g thi co the thay
+nham cac ten nhu product thanh puct
+hoac prod_valid thanh p_valid.
+
+### Q8. Do rong dau ra p
+
+Voi W = 16:
+Do rong p = 2*W = 32 bit.
+
+0xFFFF = 65535
+
+65535 * 65535 = 4294836225
+Ket qua hex: 0xFFFE0001.
+
+Neu p chi rong 16 bit thi 16 bit cao
+bi cat bo.
+
+Ket qua con lai: 0x0001 = 1.
+
+Do do dau ra phai rong 32 bit de luu
+duoc day du ket qua phep nhan.
 
 ## PHAN 3 - GIT CO BAN
 
