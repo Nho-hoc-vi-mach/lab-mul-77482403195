@@ -54,6 +54,8 @@ trace:
 clean:
 	rm -rf sim/
 
-.PHONY: help lint sim sim-icarus wave trace clean
+.PHONY: help lint sim sim-icarus wave trace clean logs logs
 
 # TODO 9 (Lab 2 - Phan 5): target logs chay: tclsh sw/scripts/tong_hop_log.tcl
+logs:
+	tclsh sw/scripts/tong_hop_log.tcl
