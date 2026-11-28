@@ -70,3 +70,57 @@ Nhan xet:
 > ghi de noi dung cu.
 >> ghi noi them vao cuoi file.
 
+## PHAN 3 - GIT CO BAN
+
+### Q9. Lich su commit
+
+Lenh: git log --oneline --graph --all
+
+Repo ca nhan:
+
+```
+* a93814e Sua 6 loi khai bao cong SystemVerilog
+*   0eea9ba Merge nhanh readme
+|\
+| * 093400d Tran Minh Nho va 77482403195 vao README
+|/
+* bb75768 Khoi tao Lab 2 va luu ket qua Linux Q1-Q5
+```
+
+Repo Binh:
+
+```
+*   f589b9b Gop SUB va AND
+|\
+| * 3defd34 Binh them phep SUB
+* | 012fca8 An them phep AND
+|/
+* 4108c66 An tao khung ALU
+```
+
+### Q10. Vi sao push cua An bi tu choi?
+
+Binh da push commit them phep SUB len repository chung truoc.
+
+An chua cap nhat thay doi cua Binh ma da commit them phep AND va push. Lich su commit cua An va repository chung bi phan nhanh.
+
+Git tu choi push de tranh lam mat thay doi cua Binh.
+
+An su dung git pull --no-rebase origin main, giai quyet merge conflict, sau do git add, git commit va git push.
+
+### Q11. Vi sao khong commit sim/?
+
+Thu muc sim/ chua cac file sinh ra trong qua trinh bien dich va mo phong. Cac file nay co the tao lai bang Makefile.
+
+Khong commit sim/ de tranh tang dung luong repository va luu cac file khong can thiet.
+
+Neu da commit sim/, su dung lenh:
+
+```
+git rm -r --cached sim/
+git commit -m "Bo theo doi thu muc sim"
+```
+
+Lenh --cached chi bo theo doi trong Git, van giu file tren o dia.
+
+Them sim/ vao .gitignore de tranh commit lai.
